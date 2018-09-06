@@ -8,18 +8,23 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class WebConfigurationInitializer implements WebApplicationInitializer {
-
+	
+	@SuppressWarnings("all")
+	private static final Logger logger = LoggerFactory.getLogger(WebConfigurationInitializer.class);
+	
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
 		// ContextLoaderListener listener = new ContextLoaderListener(rootAppContext);
-		// servletContext.addListener(listener);
+		// servletContext.addLiSstener(listener);
 
 		AnnotationConfigWebApplicationContext servletConfiguration = new AnnotationConfigWebApplicationContext();
 		servletConfiguration.register(ServletConfiguration.class);
