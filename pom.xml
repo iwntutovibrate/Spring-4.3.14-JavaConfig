@@ -22,7 +22,7 @@
 		<!-- Web -->
 		<servlet.version>3.0.1</servlet.version>
 		<servlet.jsp.version>2.2.1</servlet.jsp.version>
-		<servlet.jstl.version>1.2.1</servlet.jstl.version>
+		<servlet.jstl.version>1.2</servlet.jstl.version>
 
 		<!-- Logging -->
 		<log4j-version>1.2.17</log4j-version>
@@ -126,22 +126,24 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
 			<version>${servlet.jstl.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>javax.servlet.jsp.jstl</artifactId>
-			<version>${servlet.jstl.version}</version>
-			<exclusions>
-				<!-- jstl-api was adding servlet-api 2.5 and jsp-api -->
-				<exclusion>
-					<artifactId>jstl-api</artifactId>
-					<groupId>javax.servlet.jsp.jstl</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.glassfish.web</groupId> -->
+<!-- 			<artifactId>javax.servlet.jsp.jstl</artifactId> -->
+<!-- 			<version>${servlet.jstl.version}</version> -->
+<!-- 			<exclusions> -->
+<!-- 				jstl-api was adding servlet-api 2.5 and jsp-api -->
+<!-- 				<exclusion> -->
+<!-- 					<artifactId>jstl-api</artifactId> -->
+<!-- 					<groupId>javax.servlet.jsp.jstl</groupId> -->
+<!-- 				</exclusion> -->
+<!-- 			</exclusions> -->
+<!-- 		</dependency> -->
 
 		<!-- Test -->
 		<dependency>
