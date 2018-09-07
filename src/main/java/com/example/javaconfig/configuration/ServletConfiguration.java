@@ -124,6 +124,13 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	}
 	
 	
+	
+	/**
+	 * @Function   : PropertyPlaceholderConfigurer
+	 * @author     : iwntutovibrate
+	 * @date       : 2018. 09. 07.
+	 * @return     : classpath:database.properties
+	 */
 	@Bean
 	public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
 
