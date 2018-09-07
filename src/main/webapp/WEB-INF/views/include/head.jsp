@@ -10,5 +10,8 @@
 <meta name="reply-to(email)" content="iwntutovibrate@gmail.com">
 <meta name="copyright" content="iwntutovibrate">
 
-<link rel="icon" type="image/x-icon" href="${_url}/res/images/icons/favicon/project.png"/>
 <title>Spring JavaConfig</title>
+
+<link rel="icon" type="image/x-icon" href="${_url}/res/images/icons/favicon/project.png"/>
+<link rel="stylesheet" href="${_url}/res/css/javaconfig.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

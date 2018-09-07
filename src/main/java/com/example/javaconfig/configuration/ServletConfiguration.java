@@ -64,9 +64,9 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	/**
 	 * @Function   : Content Negotiating View Resolver
 	 * @param      : ContentNegotiationManager
+	 * @return     : ViewResolver - List<ViewResolver>
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 06.
-	 * @return     : ViewResolver - List<ViewResolver>
 	 */
 	@Bean
 	public ViewResolver contentNegotiatingViewResolver(ContentNegotiationManager manager) {
@@ -85,9 +85,9 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	
 	/**
 	 * @Function   : JSP View Resolver
+	 * @return     : ViewResolver
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 06.
-	 * @return     : ViewResolver
 	 */
 	@Bean
 	public ViewResolver jspViewResolver() {
@@ -106,9 +106,9 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	
 	/**
 	 * @Function   : JSON View Resolver
+	 * @return     : ViewResolver
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 06.
-	 * @return     : ViewResolver
 	 */
 	@Bean
 	public ViewResolver jsonViewResolver() {
@@ -127,9 +127,9 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	
 	/**
 	 * @Function   : PropertyPlaceholderConfigurer
+	 * @return     : classpath:database.properties
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 07.
-	 * @return     : classpath:database.properties
 	 */
 	@Bean
 	public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
