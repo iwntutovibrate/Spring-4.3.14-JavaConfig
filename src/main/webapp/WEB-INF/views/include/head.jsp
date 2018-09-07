@@ -10,4 +10,5 @@
 <meta name="reply-to(email)" content="iwntutovibrate@gmail.com">
 <meta name="copyright" content="iwntutovibrate">
 
+<link rel="icon" type="image/x-icon" href="${_url}/res/images/icons/favicon/green.png" />
 <title>Spring JavaConfig</title>
