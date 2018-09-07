@@ -50,7 +50,7 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/res/**").addResourceLocations("/resource/");
+		registry.addResourceHandler("/res/**").addResourceLocations("/resources/");
 	}
 	
 	
