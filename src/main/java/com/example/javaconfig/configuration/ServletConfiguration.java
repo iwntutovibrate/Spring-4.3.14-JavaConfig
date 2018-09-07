@@ -6,11 +6,15 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -33,7 +37,9 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 			   },
 			   excludeFilters = {
 					@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Service.class),
-					@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Repository.class)
+					@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Repository.class),
+					@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Component.class),
+					@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Autowired.class)
 			   })
 
 public class ServletConfiguration extends WebMvcConfigurerAdapter{
@@ -115,6 +121,16 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 				return view;
 			}
 		};
+	}
+	
+	
+	@Bean
+	public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
+
+		PropertyPlaceholderConfigurer propertyPlaceholderConfigurer = new PropertyPlaceholderConfigurer();
+		propertyPlaceholderConfigurer.setLocation(new ClassPathResource("database.properties"));
+
+		return propertyPlaceholderConfigurer;
 	}
 	
 }

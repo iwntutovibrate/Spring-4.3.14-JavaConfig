@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -23,9 +24,11 @@ import org.springframework.stereotype.Service;
 					   @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Component.class),
 					   @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Autowired.class)
 			   })
+@Import({DataBaseConfiguration.class})
 public class ApplicationConfiguration {
 	
 	@SuppressWarnings("all")
 	private static final Logger logger = LoggerFactory.getLogger(ApplicationConfiguration.class);
+	
 	
 }

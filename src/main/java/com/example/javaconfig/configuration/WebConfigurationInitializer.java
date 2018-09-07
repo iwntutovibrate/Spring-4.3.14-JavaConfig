@@ -11,6 +11,7 @@ import javax.servlet.ServletRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -23,8 +24,11 @@ public class WebConfigurationInitializer implements WebApplicationInitializer {
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
-		// ContextLoaderListener listener = new ContextLoaderListener(rootAppContext);
-		// servletContext.addLiSstener(listener);
+		AnnotationConfigWebApplicationContext applicationConfiguration = new AnnotationConfigWebApplicationContext();
+		applicationConfiguration.register(ApplicationConfiguration.class);
+		
+		ContextLoaderListener listener = new ContextLoaderListener(applicationConfiguration);
+		servletContext.addListener(listener);
 
 		AnnotationConfigWebApplicationContext servletConfiguration = new AnnotationConfigWebApplicationContext();
 		servletConfiguration.register(ServletConfiguration.class);
