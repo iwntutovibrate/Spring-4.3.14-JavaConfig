@@ -20,10 +20,6 @@ public class MainController {
 	@SuppressWarnings("all")
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
-
-	@Autowired private UserService userService = null;
-
-
 	/**
 	 * @request    : pageContext.request.contextPath
 	 * @response   : main/index.jsp
