@@ -17,7 +17,8 @@
 			</div>
 			<div class="col-sm-8 text-left"> 
 				<h1>Spring Security.</h1>
-				<p>example</p>
+				<br />
+				<p>Login, Logout</p>
 				<hr>
 				<h3>1. Login </h3>
 				<p>example</p>
