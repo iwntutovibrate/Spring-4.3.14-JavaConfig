@@ -13,10 +13,20 @@ public class UserService {
 
 	@Autowired private UserDAO userDAO = null;
 	
+	public void setUser(UserDTO userDTO) {
+		userDAO.insertUser(userDTO);
+	}
+	
 	public List<UserDTO> getAllUserDataList(){
-		
-		 // Business logic here...
-				
 		return userDAO.selectAllUser();
 	}
+	
+	public void editUserName(UserDTO userDTO) {
+		userDAO.updateUserName(userDTO);
+	}
+	
+	public void removeUser(int idx) {
+		userDAO.deleteUser(idx);
+	}
+	
 }

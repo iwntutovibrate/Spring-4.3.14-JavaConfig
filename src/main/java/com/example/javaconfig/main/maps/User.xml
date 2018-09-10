@@ -2,16 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
 
+	<insert id="insertUser" parameterType="com.example.javaconfig.main.dto.UserDTO">
+	
+		INSERT INTO USER (
+		
+			NAME
+			, AGE
+			, COUNTRY
+		
+		) VALUES (
+		
+			#{name}
+			, #{age}
+			, #{country}
+		
+		)
+	
+	</insert>
+
 	<select id="selectAllUser" resultType="com.example.javaconfig.main.dto.UserDTO">
 	
 		SELECT 
 		
-			NAME
+			IDX
+			, NAME
 			, AGE
 			, COUNTRY
 			
 		FROM USER
 	
 	</select>
+
+	<update id="updateUserName" parameterType="com.example.javaconfig.main.dto.UserDTO">
+	
+		UPDATE USER SET NAME = #{name} WHERE IDX = #{idx}
+	
+	</update>
+	
+	<delete id="deleteUser" parameterType="int">
+	
+		DELETE FROM USER WHERE IDX = #{idx}
+	
+	</delete>
 
 </mapper>
