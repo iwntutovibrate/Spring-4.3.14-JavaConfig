@@ -11,7 +11,7 @@
 			<div class="col-sm-2 sidenav">
 				<p><a class="btn btn-success" href="${_url}/">&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
 				<p><a class="btn btn-primary" href="${_url}/example/database">DATABASE</a></p>
-				<p><a class="btn btn-warning" href="${_url}/example/security">SECURITY</a></p>
+				<p><a class="btn btn-warning" href="${_url}/example/security/index">SECURITY</a></p>
 				<p><a class="btn btn-info" href="#">example</a></p>
 				<p><a class="btn btn-danger" href="#">example</a></p>
 			</div>

@@ -24,7 +24,10 @@ import org.springframework.stereotype.Service;
 					   @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Component.class),
 					   @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Autowired.class)
 			   })
-@Import({DataBaseConfiguration.class})
+@Import({
+		  DataBaseConfiguration.class
+		, SpringSecurityConfiguration.class
+		})
 public class ApplicationConfiguration {
 	
 	@SuppressWarnings("all")

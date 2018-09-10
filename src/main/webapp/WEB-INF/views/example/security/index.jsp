@@ -11,7 +11,7 @@
 			<div class="col-sm-2 sidenav">
 				<p><a class="btn btn-success" href="${_url}/">&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
 				<p><a class="btn btn-primary" href="${_url}/example/database">DATABASE</a></p>
-				<p><a class="btn btn-warning" href="${_url}/example/security">SECURITY</a></p>
+				<p><a class="btn btn-warning" href="${_url}/example/security/index">SECURITY</a></p>
 				<p><a class="btn btn-info" href="#">example</a></p>
 				<p><a class="btn btn-danger" href="#">example</a></p>
 			</div>
@@ -20,11 +20,14 @@
 				<br />
 				<p>Login, Logout</p>
 				<hr>
-				<h3>1. Login </h3>
-				<p>example</p>
+				<h3>1. Register </h3>
+				<p><a href="${_url}/example/security/register">Go Register</a></p>
 				<hr>
-				<h3>2. Logout </h3>
-				<p>example</p>
+				<h3>2. Login </h3>
+				<p><a href="${_url}/example/security/login">Go Login</a></p>
+				<hr>
+				<h3>3. Logout </h3>
+				<p><a href="/security/logout">Go Logout</a></p>
 				<hr>
 			</div>
 			<div class="col-sm-2 sidenav"></div>

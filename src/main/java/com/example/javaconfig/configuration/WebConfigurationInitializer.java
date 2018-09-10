@@ -26,14 +26,14 @@ public class WebConfigurationInitializer implements WebApplicationInitializer {
 
 		AnnotationConfigWebApplicationContext applicationConfiguration = new AnnotationConfigWebApplicationContext();
 		applicationConfiguration.register(ApplicationConfiguration.class);
-		
-		ContextLoaderListener listener = new ContextLoaderListener(applicationConfiguration);
-		servletContext.addListener(listener);
+
+		ContextLoaderListener applicationConfigurationListener = new ContextLoaderListener(applicationConfiguration);
+		servletContext.addListener(applicationConfigurationListener);
 
 		AnnotationConfigWebApplicationContext servletConfiguration = new AnnotationConfigWebApplicationContext();
 		servletConfiguration.register(ServletConfiguration.class);
 		servletConfiguration.setServletContext(servletContext);
-
+		
 		ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher",
 				new DispatcherServlet(servletConfiguration));
 

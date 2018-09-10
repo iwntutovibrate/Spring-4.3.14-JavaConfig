@@ -1,9 +1,8 @@
 package com.example.javaconfig.configuration;
 
-//import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
-//public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer{
-public class SecurityWebApplicationInitializer {
+public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer{
 
 	/**
 	 * @class     : Spring Security Filter Chain
