@@ -2,37 +2,46 @@ package com.example.javaconfig.main.dto;
 
 public class UserDTO {
 
-	private String NAME = null;
-	private Integer AGE = null;
-	private String COUNTRY = null;
+	private Integer idx = null;
+	private String name = null;
+	private Integer age = null;
+	private String country = null;
 
-	public String getNAME() {
-		return NAME;
+	public Integer getIdx() {
+		return idx;
 	}
 
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setIdx(Integer idx) {
+		this.idx = idx;
 	}
 
-	public Integer getAGE() {
-		return AGE;
+	public String getName() {
+		return name;
 	}
 
-	public void setAGE(Integer aGE) {
-		AGE = aGE;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getCOUNTRY() {
-		return COUNTRY;
+	public Integer getAge() {
+		return age;
 	}
 
-	public void setCOUNTRY(String cOUNTRY) {
-		COUNTRY = cOUNTRY;
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	@Override
 	public String toString() {
-		return "UserDTO [NAME=" + NAME + ", AGE=" + AGE + ", COUNTRY=" + COUNTRY + "]";
+		return "UserDTO [idx=" + idx + ", name=" + name + ", age=" + age + ", country=" + country + "]";
 	}
 
 }
