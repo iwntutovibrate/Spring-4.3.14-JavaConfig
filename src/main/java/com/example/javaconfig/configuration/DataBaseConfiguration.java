@@ -43,9 +43,13 @@ public class DataBaseConfiguration {
 	private String password = null;
 	
 	
-	@Autowired ApplicationContext applicationContext = null;
 	
-	
+	/**
+	 * @Function   : Data Source
+	 * @return     : DataSource
+	 * @author     : iwntutovibrate
+	 * @date       : 2018. 09. 06
+	 */
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -57,12 +61,27 @@ public class DataBaseConfiguration {
 	}
 	
 	
+	
+	/**
+	 * @Function   : Transaction Manager
+	 * @return     : PlatformTransactionManager
+	 * @author     : iwntutovibrate
+	 * @date       : 2018. 09. 06
+	 */
 	@Bean
 	public PlatformTransactionManager transactionManager() {
 		return new DataSourceTransactionManager(dataSource());
 	}
 
 	
+	
+	/**
+	 * @Function   : MyBatis SqlSession Factory Bean
+	 * @param      : DataSource
+	 * @return     : SqlSessionFactoryBean
+	 * @author     : iwntutovibrate
+	 * @date       : 2018. 09. 06
+	 */
 	@Bean
 	public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource,
 	ApplicationContext applicationContext) throws IOException {
@@ -76,6 +95,14 @@ public class DataBaseConfiguration {
 	}
 	
 	
+	
+	/**
+	 * @Function   : MyBatis SqlSession Template
+	 * @param      : SqlSessionFactory
+	 * @return     : SqlSessionTemplate
+	 * @author     : iwntutovibrate
+	 * @date       : 2018. 09. 06
+	 */
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
 		return new SqlSessionTemplate(sqlSessionFactory);
