@@ -6,8 +6,8 @@
 <head>
 	<c:import url="/WEB-INF/views/include/head.jsp" />
 <body>
-	<div class="container-fluid text-center wrap">    
-		<div class="row content container">
+	<div class="container-fluid text-center">    
+		<div class="row content">
 			<div class="col-sm-2 sidenav">
 				<p><a class="btn btn-success" href="${_url}/">&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
 				<p><a class="btn btn-primary" href="${_url}/example/database">DATABASE</a></p>
@@ -16,17 +16,15 @@
 				<p><a class="btn btn-danger" href="#">example</a></p>
 			</div>
 			<div class="col-sm-8 text-left"> 
-				<h1>USE THE JAVA CONFIGURATION</h1>
-				<br />
-				<p>- This project is a project that uses Java configuration in Spring.</p>
+				<h1>Spring Security.</h1>
+				<p>example</p>
 				<hr>
-				<h3>1). DataBase Connection and I/O</h3>
-				<br />
-				<h5>- Insert, Select, Update, Delete</h5>
+				<h3>1. Login </h3>
+				<p>example</p>
 				<hr>
-				<h3>2). Spring Security</h3>
-				<br />
-				<h5>- Login, Logout</h5>
+				<h3>2. Logout </h3>
+				<p>example</p>
+				<hr>
 			</div>
 			<div class="col-sm-2 sidenav"></div>
 		</div>
