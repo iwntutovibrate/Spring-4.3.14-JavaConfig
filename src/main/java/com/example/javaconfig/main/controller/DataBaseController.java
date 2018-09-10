@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.javaconfig.main.dto.UserDTO;
-import com.example.javaconfig.main.service.UserService;
+import com.example.javaconfig.main.dto.ExampleDTO;
+import com.example.javaconfig.main.service.ExampleService;
 
 @Controller
 public class DataBaseController {
@@ -17,7 +17,7 @@ public class DataBaseController {
 	@SuppressWarnings("all")
 	private static final Logger logger = LoggerFactory.getLogger(DataBaseController.class);
 
-	@Autowired private UserService userService = null;
+	@Autowired private ExampleService exampleService = null;
 	
 	/**
 	 * @request    : example/database
@@ -28,7 +28,7 @@ public class DataBaseController {
 	 */
 	@RequestMapping(value="example/database", method=RequestMethod.GET)
 	public void select(Model model) {
-		model.addAttribute("userList", userService.getAllUserDataList());
+		model.addAttribute("exampleList", exampleService.getAllExampleDataList());
 	}
 
 
@@ -36,14 +36,14 @@ public class DataBaseController {
 	/**
 	 * @request    : example/database/insert
 	 * @response   : example/database
-	 * @param      : UserDTO
+	 * @param      : ExampleDTO
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 10.
 	 */
 	@RequestMapping(value="example/database/insert", method=RequestMethod.POST)
-	public String insert(UserDTO userDTO) {
+	public String insert(ExampleDTO exampleDTO) {
 		
-		userService.setUser(userDTO);
+		exampleService.setExample(exampleDTO);
 		return "redirect:/example/database";
 	}
 
@@ -52,14 +52,14 @@ public class DataBaseController {
 	/**
 	 * @request    : example/database/update
 	 * @response   : example/database
-	 * @param      : UserDTO
+	 * @param      : ExampleDTO
 	 * @author     : iwntutovibrate
 	 * @date       : 2018. 09. 10.
 	 */
 	@RequestMapping(value="example/database/update", method=RequestMethod.POST)
-	public String update(UserDTO userDTO) {
+	public String update(ExampleDTO exampleDTO) {
 		
-		userService.editUserName(userDTO);
+		exampleService.editExampleName(exampleDTO);
 		return "redirect:/example/database";
 	}
 
@@ -75,7 +75,7 @@ public class DataBaseController {
 	@RequestMapping(value="example/database/delete", method=RequestMethod.POST)
 	public String delete(int idx) {
 		
-		userService.removeUser(idx);
+		exampleService.removeExample(idx);
 		return "redirect:/example/database";
 	}
 

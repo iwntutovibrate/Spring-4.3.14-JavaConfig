@@ -1,6 +1,6 @@
 package com.example.javaconfig.main.dto;
 
-public class UserDTO {
+public class ExampleDTO {
 
 	private Integer idx = null;
 	private String name = null;

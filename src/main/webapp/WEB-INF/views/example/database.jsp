@@ -23,7 +23,7 @@
 				<h3>1. Select </h3>
 				<p>- User list</p>
 				<br />
-				<c:forEach items="${userList}" var="list">
+				<c:forEach items="${exampleList}" var="list">
 					<p>IDX : ${list.idx}</p>
 					<p>NAME : ${list.name}</p>
 					<p>AGE : ${list.age}</p>

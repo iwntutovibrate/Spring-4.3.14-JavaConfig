@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.javaconfig.main.dto.UserDTO;
-import com.example.javaconfig.main.service.UserService;
+import com.example.javaconfig.main.dto.ExampleDTO;
+import com.example.javaconfig.main.service.ExampleService;
 
 @Controller
 public class MainController {
