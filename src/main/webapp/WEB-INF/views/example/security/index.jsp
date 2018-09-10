@@ -18,7 +18,7 @@
 			<div class="col-sm-8 text-left"> 
 				<h1>Spring Security.</h1>
 				<br />
-				<p>Login, Logout</p>
+				<p>Register, Login, Logout</p>
 				<hr>
 				<h3>1. Register </h3>
 				<p><a href="${_url}/example/security/register">Go Register</a></p>

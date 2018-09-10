@@ -8,5 +8,11 @@
 </head>
 <body>
 
+	<form action="${_url}/security/login" method="post">
+		<input type="text" name="loginId">
+		<input type="text" name="loginPw">
+		<button>login</button>
+	</form>
+
 </body>
 </html>

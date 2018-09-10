@@ -26,7 +26,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.maxSessionsPreventsLogin(true)
 				.expiredUrl("/example/security/login");
 		
-		http.httpBasic()
+		http.csrf().disable().httpBasic()
 			.and()
 			.authorizeRequests()
 				.antMatchers("/**").permitAll()
@@ -35,6 +35,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 			.formLogin()
 				.loginPage("/example/security/login")
+				.loginProcessingUrl("/security/login")
 				.usernameParameter("loginId")
 				.passwordParameter("loginPw")
 				.defaultSuccessUrl("/example/security/success")
