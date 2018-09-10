@@ -6,13 +6,15 @@
 	
 		INSERT INTO USER (
 		
-			NAME
+			IDX
+			, NAME
 			, AGE
 			, COUNTRY
 		
 		) VALUES (
-		
-			#{name}
+			
+			#{idx}
+			, #{name}
 			, #{age}
 			, #{country}
 		
