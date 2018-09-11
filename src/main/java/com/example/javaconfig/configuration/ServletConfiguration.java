@@ -19,6 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.accept.ContentNegotiationManager;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -121,6 +123,17 @@ public class ServletConfiguration extends WebMvcConfigurerAdapter{
 				return view;
 			}
 		};
+	}
+	
+	
+	
+	@Bean
+	public MultipartResolver multipartResolver() {
+
+		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+		resolver.setMaxInMemorySize(100000000);
+		resolver.setMaxUploadSize(200000000);
+		return resolver;
 	}
 	
 	

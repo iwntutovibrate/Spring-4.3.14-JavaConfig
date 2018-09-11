@@ -22,11 +22,11 @@
 				<hr>
 				<h3>1). DataBase Connection and I/O</h3>
 				<br />
-				<h5>- Insert, Select, Update, Delete</h5>
+				<h5>FUNCTIONS - Insert, Select, Update, Delete</h5>
 				<hr>
 				<h3>2). Spring Security</h3>
 				<br />
-				<h5>- Login, Logout</h5>
+				<h5>FUNCTIONS - Register, Login, Logout</h5>
 			</div>
 			<div class="col-sm-2 sidenav"></div>
 		</div>

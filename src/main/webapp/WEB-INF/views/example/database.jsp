@@ -19,6 +19,8 @@
 				<h1>Database Example. </h1>
 				<br />
 				<p>- Insert, Select, Update, Delete</p>
+				<p>- Exmaple Database Name : Sample </p>
+				<p>- SQL File Directory : /src/main/resources/sample.sql </p>
 				<hr>
 				<h3>1. Select </h3>
 				<p>- User list</p>

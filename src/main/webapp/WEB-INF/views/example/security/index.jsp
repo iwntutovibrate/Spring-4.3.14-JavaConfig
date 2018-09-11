@@ -19,6 +19,8 @@
 				<h1>Spring Security.</h1>
 				<br />
 				<p>Register, Login, Logout</p>
+				<p>- Exmaple Database Name : USER </p>
+				<p>- SQL File Directory : /src/main/resources/user.sql </p>
 				<hr>
 				<h3>1. Register </h3>
 				<p><a href="${_url}/example/security/register">Go Register</a></p>
