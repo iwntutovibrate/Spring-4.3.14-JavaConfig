@@ -27,6 +27,6 @@ public class AuthenticationSuccess extends AbstractAuthenticationTargetUrlReques
 		HttpSession session = request.getSession(true);
 		session.setAttribute("_user", userDTO);
 		
-		getRedirectStrategy().sendRedirect(request, response,  "/example/security/success" );
+		getRedirectStrategy().sendRedirect(request, response,  "/example/security/index" );
 	}
 }

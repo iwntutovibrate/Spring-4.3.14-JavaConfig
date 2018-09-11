@@ -43,7 +43,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/security/login")
 				.usernameParameter("loginId")
 				.passwordParameter("loginPw")
-				.defaultSuccessUrl("/example/security/success")
+				//.defaultSuccessUrl("/example/security/index")
 				.failureUrl("/example/security/login?error=1")
 				.successHandler(new AuthenticationSuccess())
 				//.failureHandler(authenticationFail)
