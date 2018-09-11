@@ -27,7 +27,7 @@
 				<p><a href="${_url}/example/security/login">Go Login</a></p>
 				<hr>
 				<h3>3. Logout </h3>
-				<p><a href="/security/logout">Go Logout</a></p>
+				<p><a href="${_url}/security/logout">Go Logout</a></p>
 				<hr>
 			</div>
 			<div class="col-sm-2 sidenav"></div>

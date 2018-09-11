@@ -1,11 +1,17 @@
 package com.example.javaconfig.configuration;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import com.example.javaconfig.common.security.AuthenticationFail;
+import com.example.javaconfig.common.security.AuthenticationProvider;
+import com.example.javaconfig.common.security.AuthenticationSuccess;
+import com.example.javaconfig.common.security.UserDetailService;
 
 @Configuration
 @EnableWebSecurity
@@ -40,12 +46,23 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.passwordParameter("loginPw")
 				.defaultSuccessUrl("/example/security/success")
 				.failureUrl("/example/security/login?error=1")
-				//.successHandler(successHandler())
-				//.failureHandler(failureHandler())
+				.successHandler(new AuthenticationSuccess())
+				//.failureHandler(new AuthenticationFail())
 			.and()
 			.logout()
 				.logoutUrl("/security/logout")
 				.logoutSuccessUrl("/example/security/index");
 	}
 	
+	@Bean
+	public UserDetailService userDetatils() {
+		UserDetailService userDetailService = new UserDetailService();
+		return userDetailService;
+	}
+	
+//	@Bean
+//	public AuthenticationProvider authenticationProvider() {
+//		AuthenticationProvider authenticationProvider = new AuthenticationProvider();
+//		return authenticationProvider;
+//	}
 }

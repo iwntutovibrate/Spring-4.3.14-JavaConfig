@@ -30,7 +30,7 @@ public class SecurityController {
 		
 	}
 
-	@RequestMapping(value="example/security/register", method=RequestMethod.POST)
+	@RequestMapping(value="example/security/register", method=RequestMethod.GET)
 	public void securityRegister(UserDTO userDTO) {
 		
 	}
