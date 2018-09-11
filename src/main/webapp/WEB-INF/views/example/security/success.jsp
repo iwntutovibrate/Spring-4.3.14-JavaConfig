@@ -8,5 +8,7 @@
 </head>
 <body>
 성공
+
+당신의 이름 : ${_user.name}
 </body>
 </html>

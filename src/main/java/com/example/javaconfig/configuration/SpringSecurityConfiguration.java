@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import com.example.javaconfig.common.security.AuthenticationFail;
 import com.example.javaconfig.common.security.AuthenticationProvider;
 import com.example.javaconfig.common.security.AuthenticationSuccess;
 import com.example.javaconfig.common.security.UserDetailService;
@@ -47,7 +46,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.defaultSuccessUrl("/example/security/success")
 				.failureUrl("/example/security/login?error=1")
 				.successHandler(new AuthenticationSuccess())
-				//.failureHandler(new AuthenticationFail())
+				//.failureHandler(authenticationFail)
 			.and()
 			.logout()
 				.logoutUrl("/security/logout")
@@ -55,14 +54,15 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Bean
-	public UserDetailService userDetatils() {
+	public UserDetailService userDetailService() {
 		UserDetailService userDetailService = new UserDetailService();
 		return userDetailService;
 	}
 	
-//	@Bean
-//	public AuthenticationProvider authenticationProvider() {
-//		AuthenticationProvider authenticationProvider = new AuthenticationProvider();
-//		return authenticationProvider;
-//	}
+	@Bean
+	public AuthenticationProvider authenticationProvider() {
+		AuthenticationProvider authenticationProvider = new AuthenticationProvider();
+		return authenticationProvider;
+	}
+	
 }
