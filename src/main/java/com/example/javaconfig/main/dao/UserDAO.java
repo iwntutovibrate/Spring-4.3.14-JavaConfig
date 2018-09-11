@@ -12,4 +12,8 @@ public class UserDAO extends BaseDaoSupport{
 	public UserDTO selectUserByLoginId(String loginId) {
 		return this.getSqlSession().selectOne("User.selectUserByLoginId", loginId);
 	}
+	
+	public void insertUser(UserDTO userDTO) {
+		this.getSqlSession().insert("User.insertUser", userDTO);
+	}
 }

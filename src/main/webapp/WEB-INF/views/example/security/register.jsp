@@ -52,7 +52,10 @@ $(document).ready(function(){
 		} else {
 			
 			var url = '${_url}/example/security/register';
-			
+			$.post(url, $('#frmRegister').serialize(), function(data){
+				alert(data);
+				location.href = '${_url}/example/security/index';
+			});
 		}
 	});
 });

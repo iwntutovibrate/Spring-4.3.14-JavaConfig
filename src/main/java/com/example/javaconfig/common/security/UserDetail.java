@@ -50,7 +50,6 @@ public class UserDetail implements UserDetails {
 	}
 
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		if( user.getStatus().equals(4) )
 			return false;
 		
@@ -58,17 +57,14 @@ public class UserDetail implements UserDetails {
 	}
 
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return user.getStatus() == 1 ? true : false;
 	}
 
 	public int hashCode() {
-		// TODO Auto-generated method stub
 		return user.getUserId();
 	}
 

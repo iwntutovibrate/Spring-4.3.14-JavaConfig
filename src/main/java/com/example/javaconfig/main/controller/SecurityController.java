@@ -7,6 +7,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.javaconfig.main.dto.UserDTO;
 import com.example.javaconfig.main.service.UserService;
@@ -31,8 +32,15 @@ public class SecurityController {
 	}
 
 	@RequestMapping(value="example/security/register", method=RequestMethod.GET)
-	public void securityRegister(UserDTO userDTO) {
+	public void securityRegister() {
 		
+	}
+
+	@ResponseBody
+	@RequestMapping(value="example/security/register", method=RequestMethod.POST)
+	public String Register(UserDTO userDTO) {
+		userService.register(userDTO);
+		return "Success";
 	}
 
 	@RequestMapping(value="example/security/login", method=RequestMethod.GET)

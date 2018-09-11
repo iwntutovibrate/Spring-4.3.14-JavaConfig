@@ -19,7 +19,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/res/**"); // #3
+		web.ignoring().antMatchers("/res/**");
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/security/login")
 				.usernameParameter("loginId")
 				.passwordParameter("loginPw")
-				//.defaultSuccessUrl("/example/security/index")
+				.defaultSuccessUrl("/example/security/index")
 				.failureUrl("/example/security/login?error=1")
 				.successHandler(new AuthenticationSuccess())
 				//.failureHandler(authenticationFail)

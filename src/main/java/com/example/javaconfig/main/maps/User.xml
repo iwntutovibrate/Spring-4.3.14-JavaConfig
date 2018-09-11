@@ -17,5 +17,23 @@
 		WHERE LOGIN_ID = #{loginId} 
 	
 	</select>
+	
+	<insert id="insertUser" parameterType="com.example.javaconfig.main.dto.UserDTO">
+	
+		INSERT INTO USER (
+		
+			LOGIN_ID
+			, LOGIN_PW
+			, NAME
+		
+		) VALUES (
+		
+			#{loginId}
+			, #{loginPw}
+			, #{name}
+		
+		)
+	
+	</insert>
 
 </mapper>
