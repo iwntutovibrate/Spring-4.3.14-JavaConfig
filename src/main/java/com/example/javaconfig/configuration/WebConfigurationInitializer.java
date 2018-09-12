@@ -33,13 +33,21 @@ public class WebConfigurationInitializer implements WebApplicationInitializer {
 		AnnotationConfigWebApplicationContext servletConfiguration = new AnnotationConfigWebApplicationContext();
 		servletConfiguration.register(ServletConfiguration.class);
 		servletConfiguration.setServletContext(servletContext);
-		
+
+
+		/**
+		 * Servlet Dispatcher
+		 */
 		ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher",
 				new DispatcherServlet(servletConfiguration));
 
 		servlet.setLoadOnStartup(1);
 		servlet.addMapping("/");
 
+
+		/**
+		 * UTF-8 Filter
+		 */
 		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 		
 		characterEncodingFilter.setEncoding("UTF-8");
