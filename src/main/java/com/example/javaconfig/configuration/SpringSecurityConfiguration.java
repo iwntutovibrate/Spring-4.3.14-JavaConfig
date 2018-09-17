@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import com.example.javaconfig.common.security.AuthenticationFail;
 import com.example.javaconfig.common.security.AuthenticationProvider;
 import com.example.javaconfig.common.security.AuthenticationSuccess;
 import com.example.javaconfig.common.security.UserDetailService;
@@ -44,9 +45,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.usernameParameter("loginId")
 				.passwordParameter("loginPw")
 				.defaultSuccessUrl("/example/security/index")
-				.failureUrl("/example/security/login?error=1")
 				.successHandler(new AuthenticationSuccess())
-				//.failureHandler(authenticationFail)
+				.failureHandler(new AuthenticationFail())
 			.and()
 			.logout()
 				.logoutUrl("/security/logout")

@@ -1,5 +1,9 @@
 package com.example.javaconfig.main.controller;
 
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +48,13 @@ public class SecurityController {
 	}
 
 	@RequestMapping(value="example/security/login", method=RequestMethod.GET)
-	public void securityLogin() {
+	public void securityLogin(HttpServletRequest request) {
 		
+		Enumeration<String> enumeration = request.getAttributeNames();
+		while (enumeration.hasMoreElements()) {
+			String name = (String) enumeration.nextElement();
+			logger.info("name : {} ===> value : {}", name, request.getParameter(name));
+		}
 	}
 
 	@Secured("ROLE_USER")
